@@ -1,4 +1,5 @@
 # safe-defer.js
+
 `safe-defer.js` is a simple, SEO friendly, pure Javascript library for deferring image loading, class appending, and applying styles. Its aim is to be a middle ground for achieving improved page load performance and SEO compliance.
 ### SEO friendly
 Although in theory, crawlers execute scripts so they will see the replaced images. This approach allows SEO crawlers to locate and index your images without the need for javascript to run.
@@ -32,20 +33,21 @@ In-case you need to use inline style with your `background-image` you can also s
 
 before defer process
 ```html
-<div style="background-image: url('/images/my-wallpaper.png");" data-safe-defer-style/> 
+<div style="background-image: url('/images/my-wallpaper.png');" data-safe-defer-style/> 
 ```
 during defer process (starts when DOM is ready)
 ```html
-<div style="" data-safe-defer-style="background-image: url('/images/my-wallpaper.png");" /> 
+<div style="" data-safe-defer-style="background-image: url('/images/my-wallpaper.png');" /> 
 ```
 after defer process
 ```html
-<div style="background-image: url('/images/my-wallpaper.png");"/> 
+<div style="background-image: url('/images/my-wallpaper.png');"/> 
 ```
 ### IDE friendly
 Since we don't use image placeholders by default, you can still see your images while designing your HTML pages.
 
-# Usage
+## Usage
+
 Add the library just before the HTML body closing tag
   ```html
   <html>
@@ -75,7 +77,7 @@ Place the class to be deferred in the `data-safe-defer-class` attribute.
 ### Defer a `style` 
 Add the `data-safe-defer-style` attribute to any HTML element where you want the style to be deferred.
 ```html
-<div style="background-image: url('/images/my-wallpaper.png");" data-safe-defer-style/> 
+<div style="background-image: url('/images/my-wallpaper.png');" data-safe-defer-style/> 
 ```
 WARNING: This will defer everything inside the `style` attribute of the element.
 
@@ -84,14 +86,19 @@ WARNING: This will defer everything inside the `style` attribute of the element.
 ![Chrome][chrome-image] | ![Firefox][firefox-image] | ![IE][ie-image] | ![Opera][opera-image] | ![Safari][safari-image]
 --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
-# License
-MIT
 
-### Donations
-If this repo has helped you and you're feeling generous, please feel free to tip!
-##### Paypal - `paypal.me/philipbadilla`
-##### BTC - `1CDBQodi5FkvDevi4M7UtkXxtzfseCUJqW`
-##### LTC - `Lf5o6FCKzuiqAtkz7tTqr2b6NKA4hUgYS5`
+## Donating
+
+If this repo has helped you and you're feeling generous, please show your support via 
+
+[PayPal](https://www.paypal.me/philipbadilla)
+
+**BTC** - `1CDBQodi5FkvDevi4M7UtkXxtzfseCUJqW`
+
+**LTC** - `Lf5o6FCKzuiqAtkz7tTqr2b6NKA4hUgYS5`
+
+## License
+[MIT](https://github.com/philip-badilla/safe-defer/blob/master/LICENSE)
 
 [chrome-image]: https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png
 [firefox-image]: https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png
