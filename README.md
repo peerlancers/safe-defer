@@ -6,42 +6,46 @@ Although in theory, crawlers execute scripts so they will see the replaced image
 
 before defer process
 ```html
-<img src="my-image.png" data-safe-defer-src/> 
+<img src="my-image.png" data-safe-defer-src/>
 ```
 during defer process (starts when DOM is ready)
 ```html
-<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" 
-    data-safe-deferred-src="my-image.png"/> 
+<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+    data-safe-deferred-src="my-image.png"/>
 ```
 after defer process
 ```html
-<img src="my-image.png" /> 
+<img src="my-image.png" />
 ```
 ### Defer CSS Classes
-Although CSS `class` would rarely include definition for images and icons they can also be deferred(not safely) using this library.
+Although CSS `class` would rarely include definition for images and icons they can also be deferred using this library.
 
 before defer process
 ```html
-<div class="my-custom-icon" data-safe-defer-class="left-arrow-icon"/> 
+<div class="my-custom-icon left-arrow-icon" data-safe-defer-class="left-arrow-icon"/>
+```
+during defer process (starts when DOM is ready)
+```html
+<div class="my-custom-icon" data-safe-defer-class="left-arrow-icon"/>
 ```
 after defer process
 ```html
-<img class="my-custom-icon left-arrow-icon" /> 
+<img class="my-custom-icon left-arrow-icon" />
 ```
 ### Safe-Defer Inline Styles
 In-case you need to use inline style with your `background-image` you can also safely defer them.
 
 before defer process
 ```html
-<div style="background-image: url('/images/my-wallpaper.png');" data-safe-defer-style/> 
+<div style="background-image: url('/images/my-wallpaper.png');" data-safe-defer-style/>
 ```
 during defer process (starts when DOM is ready)
 ```html
-<div style="" data-safe-defer-style="background-image: url('/images/my-wallpaper.png');" /> 
+<div style="" data-safe-defer-style="background-image: url('/images/my-wallpaper.png');" />
 ```
 after defer process
 ```html
-<div style="background-image: url('/images/my-wallpaper.png');"/> 
+<div style="background-image: url('/images/my-wallpaper.png');"/>
 ```
 ### IDE friendly
 Since we don't use image placeholders by default, you can still see your images while designing your HTML pages.
@@ -65,19 +69,19 @@ Add the library just before the HTML body closing tag
 ### Defer a `src`
 Add the `data-safe-defer-src` attribute to an `img` element to defer the source.
 ```html
-<img src="my-image.png" data-safe-defer-src/> 
+<img src="my-image.png" data-safe-defer-src/>
 ```
 Disclaimer: `data-safe-defer-src` would work on any HTML element that has `src` attribute however it was only tested on image tags.
 
-### Defer a `class` 
+### Defer a `class`
 Place the class to be deferred in the `data-safe-defer-class` attribute.
 ```html
-<div class="my-custom-icon" data-safe-defer-class="left-arrow-icon"/> 
+<div class="my-custom-icon left-arrow-icon" data-safe-defer-class="left-arrow-icon"/>
 ```
-### Defer a `style` 
+### Defer a `style`
 Add the `data-safe-defer-style` attribute to any HTML element where you want the style to be deferred.
 ```html
-<div style="background-image: url('/images/my-wallpaper.png');" data-safe-defer-style/> 
+<div style="background-image: url('/images/my-wallpaper.png');" data-safe-defer-style/>
 ```
 WARNING: This will defer everything inside the `style` attribute of the element.
 
@@ -89,7 +93,7 @@ Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
 
 ## Donating
 
-If this repo has helped you and you're feeling generous, please show your support via 
+If this repo has helped you and you're feeling generous, please show your support via
 
 [PayPal](https://www.paypal.me/philipbadilla)
 

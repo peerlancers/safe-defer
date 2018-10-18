@@ -8,7 +8,8 @@ var safeDefer = {
 
   deferAll: function() {
     safeDefer.deferSources();
-    safeDefer.deferStyle();
+    safeDefer.deferClasses();
+    safeDefer.deferStyles();
   },
 
   deferSources: function() {
@@ -35,7 +36,28 @@ var safeDefer = {
     }
   },
 
-  deferStyle: function() {
+  deferClasses: function() {
+    // Find all elements that requires src attribute to be deferred
+    var selector =  "*[" + safeDefer.classDeferAttribute + "]";
+    var elements = document.querySelectorAll(selector);
+
+    // Iterate each element
+    for(var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var deferredClasses = element.getAttribute(safeDefer.classDeferAttribute);
+      var deferredClassesList = deferredClasses.split(" ");
+
+      deferredClassesList.forEach(function(value) {
+        if (safeDefer.debugMode) {
+          console.log("Deferring Source: " + value);
+        }
+
+        element.classList.remove(value);
+      });
+    }
+  },
+
+  deferStyles: function() {
     // Find all elements that requires style attribute to be deferred
     var selector =  "*[" + safeDefer.styleDeferAttribute + "]";
     var elements = document.querySelectorAll(selector);
@@ -47,7 +69,7 @@ var safeDefer = {
       if (safeDefer.debugMode) {
         console.log("Deferring Style: " + orignalStyle);
       }
-      // Move original style to back-up attribute and remove current style 
+      // Move original style to back-up attribute and remove current style
       element.setAttribute(safeDefer.styleDeferAttribute, orignalStyle);
       element.setAttribute("style", "");
     }
@@ -86,12 +108,16 @@ var safeDefer = {
     // Iterate each element
     for(var i = 0; i < elements.length; i++) {
       var element = elements[i];
-      var deferredClass = element.getAttribute(safeDefer.classDeferAttribute);
-      if (safeDefer.debugMode) {
-        console.log("Appending Class: " + deferredClass);
-      }
-      // Append deferred class
-      element.classList.add(deferredClass);
+      var deferredClasses = element.getAttribute(safeDefer.classDeferAttribute);
+      var deferredClassesList = deferredClasses.split(" ");
+
+      deferredClassesList.forEach(function(value) {
+        if (safeDefer.debugMode) {
+          console.log("Appending Class: " + value);
+        }
+        element.classList.add(value);
+      });
+
       // Clean up the DOM, we no longer need this attribute
       element.removeAttribute(safeDefer.classDeferAttribute);
     }
