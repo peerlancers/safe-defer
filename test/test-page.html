@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Safe Defer Test Page</title>
+    <script type="text/javascript">
+      var timerStart = Date.now();
+      window.addEventListener("load", function () {
+        var element = document.getElementById("load-time");
+        element.innerHTML = Date.now()-timerStart + " ms";
+      }, false);
+
+      var refreshPage = function() {
+        window.top.location = window.top.location.host;
+      };
+    </script>
+  </head>
+  <body>
+    <h3>Stats</h3>
+    <pre>
+      <button type="input" onclick="refreshPage()">Refresh</button>
+      <strong>DOM: </strong><span id="dom-time"></span>
+      <strong>PAGE: </strong><span id="load-time"></span>
+    </pre>
+    <div class="wrapper">
+      <h3>Regular Images (Top Fold)</h3>
+      <hr />
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1525039271310-0fd0060ff56d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=739f7deb7180183986c419b1d7e80640&auto=format&fit=crop&w=750&q=80" />
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1526577579646-2402908bcb48?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6b24f94dc1c606d1c46dbb7048333831&auto=format&fit=crop&w=750&q=80" />
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1517604561872-9884e874dc04?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=516c3e154a48a4b32b6d0d51f50c925c&auto=format&fit=crop&w=667&q=80" />
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/uploads/14126691796798a85b1b0/970ca552?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b9862da0fb9f7746189f5738db1db8ab&auto=format&fit=crop&w=750&q=80" />
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1523263666618-c992b26eec21?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1447ed45933e64d22cdd80d174e6e4ad&auto=format&fit=crop&w=667&q=80" />
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1439218162959-f94eda3a382a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac127bbd5fc7c7ed791ee490000a81b4&auto=format&fit=crop&w=750&q=80" />
+      </div>
+      <h3>Deferred Images (Bottom Fold)</h3>
+      <hr />
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1525466760727-1d8be8721154?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=56a4864ebba1f73f191f4ac870260716&auto=format&fit=crop&w=1500&q=80" data-safe-defer-src/>
+        </div>
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1527606078995-42486f991014?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2483eebe64a97f50e954f6dd15e9ac61&auto=format&fit=crop&w=755&q=80" data-safe-defer-src/>
+        </div>
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1507525586584-6a9c816efbed?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ec156ca1f12c96f632ec169853c82252&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+        </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1532543307581-8b01a7ff954f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4d80ba55f2d1407770a8079def45101d&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1530286443292-077db8d466a4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3d60b7da9c21a5eea6a7ef4103e18917&auto=format&fit=crop&w=800&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1493407497798-75e53a4ec21f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8e8e201cdc91bf31fe0d2d59e37a6586&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1468273519810-d3fe4c125cdb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=461a855298f70f5c4925e79b9c9325be&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1513043105799-ba3f53df3ab7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a9f1292f4bf0d29c0ec88d6764b02fa4&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1523812483161-8af21dad90dc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=719e9d34adfec1d88c6421413e53bed3&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1534226501678-2988ac084d54?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b995bca15ef92499dfb81f7c13d4f8e0&auto=format&fit=crop&w=752&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1509157774525-cd6d6cbf00a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=248c1166a9905ca8718e9c466fa347ee&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1465161191540-aac346fcbaff?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f1187da744214c0c4ee4e2c65187923f&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1532617074212-c503101ae0b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=58202b5b4775d467cce21ef650c2e451&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1531402584262-f213e54dea77?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9178cd6d70061a053021314f51a66c61&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1521249635712-69ca33adf729?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7a8ab4db4d37d4622464831f61568ed2&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1529473814998-077b4fec6770?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ca76db1644848ffa54451d2dfe53ff64&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1456425731181-2152d80d946c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4b7c15ff8dc6ea77ab411dca53238eb2&auto=format&fit=crop&w=751&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9cf2d396b2e5cb94bc449e2d91412ffe&auto=format&fit=crop&w=750&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1516383607781-913a19294fd1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cb89d6cf255ed4d30f539a2546a8967a&auto=format&fit=crop&w=753&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1517323222903-552f95c7abc9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=15a77438b1582092ea130f1fee78cb2b&auto=format&fit=crop&w=760&q=80" data-safe-defer-src/>
+      </div>
+      <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1489286696299-aa7486820bd5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e05a1412f3ea3b087ea5210b1f9128f&auto=format&fit=crop&w=751&q=80" data-safe-defer-src/>
+      </div>
+      <h3>Deferred Classes</h3>
+      <hr />
+      <div class="wallpaper stall" data-safe-defer-class="stall"></div>
+      <div class="wallpaper toys" data-safe-defer-class="toys"></div>
+      <div class="wallpaper urchins" data-safe-defer-class="urchins"></div>
+      <div class="wallpaper magz" data-safe-defer-class="magz"></div>
+      <div class="wallpaper computer" data-safe-defer-class="computer"></div>
+      <div class="wallpaper posters" data-safe-defer-class="posters"></div>
+      <h3>Deferred Styles</h3>
+      <hr />
+      <div class="wallpaper" style="background-image: url('https://images.unsplash.com/photo-1511495656130-1dafb0ba8f28?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0d660d16950069ea38ec899752e32339&auto=format&fit=crop&w=750&q=80')" data-safe-defer-style>
+      </div>
+      <div class="wallpaper" style="background-image: url('https://images.unsplash.com/photo-1514329926535-7f6dbfbfb114?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c5fd5e4c2178593a7b44dab1bc91941a&auto=format&fit=crop&w=750&q=80')" data-safe-defer-style>
+      </div>
+      <div class="wallpaper" style="background-image: url('https://images.unsplash.com/photo-1455669175216-9017c9b02fc6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e19d2f27f8180fc03b4b3dbc9a117724&auto=format&fit=crop&w=669&q=80')" data-safe-defer-style>
+      </div>
+      <div class="wallpaper" style="background-image: url('https://images.unsplash.com/photo-1517163907682-7b3ad9fab4fb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=977ffe33c24de2340a5b5b20cb2b0b52&auto=format&fit=crop&w=750&q=80')" data-safe-defer-style>
+      </div>
+      <div class="wallpaper" style="background-image: url('https://images.unsplash.com/photo-1523958747377-9fa005550ea1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0895674fa7f0827e4fc8f4e62861a6e2&auto=format&fit=crop&w=750&q=80')" data-safe-defer-style>
+      </div>
+      <div class="wallpaper" style="background-image: url('https://images.unsplash.com/photo-1494698852314-652666555934?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=30b81004e146971fa9d752dbc3e64433&auto=format&fit=crop&w=751&q=80')" data-safe-defer-style>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- REMOVE THIS SCRIPT TO DISABLE DEFERRED IMAGES -->
+    <script type="text/javascript" src="../src/safe-defer.js"></script>
+
+    <script type="text/javascript">
+      (function() {
+        var element = document.getElementById("dom-time");
+        element.innerHTML = Date.now()-timerStart + " ms";
+      })();
+    </script>
+  </body>
+</html>

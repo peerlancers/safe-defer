@@ -1,0 +1,45 @@
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.wrapper {
+  margin: 10px;
+}
+
+.image-wrapper {
+  padding: 5px;
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid black;
+  width: 50px;
+  height: auto;
+}
+.wallpaper {
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+}
+
+.stall {
+  background-image: url("https://images.unsplash.com/photo-1516382461343-35e1ba016e01?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=92196eb75359ee7216fd7b5b87b09e87&auto=format&fit=crop&w=667&q=80");
+}
+
+.toys {
+  background-image: url("https://images.unsplash.com/photo-1523958468590-17cdda8fb639?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a743a8a89f569516282126e787e5780d&auto=format&fit=crop&w=750&q=80")
+}
+
+.urchins {
+  background-image: url("https://images.unsplash.com/photo-1518289964922-e679099198bd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cf229ba480449d8450eb32cfd415e6b1&auto=format&fit=crop&w=500&q=80")
+}
+.magz {
+  background-image: url("https://images.unsplash.com/photo-1533678316395-13b6b41bf542?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac79b616713034f10bc32ccddf87383f&auto=format&fit=crop&w=334&q=80")
+}
+.computer {
+  background-image: url("https://images.unsplash.com/7/Top_view.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5a5100e1373a0566dbb1f4b69a65e4f&auto=format&fit=crop&w=800&q=80")
+}
+.posters {
+  background-image: url("https://images.unsplash.com/photo-1523461811963-7f1023caeddd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cbc8988481318b3d3e650f088f32bfc1&auto=format&fit=crop&w=745&q=80")
+}

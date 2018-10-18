@@ -49,7 +49,7 @@ var safeDefer = {
 
       deferredClassesList.forEach(function(value) {
         if (safeDefer.debugMode) {
-          console.log("Deferring Source: " + value);
+          console.log("Deferring Class: " + value);
         }
 
         element.classList.remove(value);
