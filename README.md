@@ -62,10 +62,46 @@ Add the library just before the HTML body closing tag
         // DOM stuff
         // More DOM stuff
         <script type="text/javascript" src="safe-defer.min.js"></script>
+        <script>
+            (function() {
+                safeDefer.deferAll();
+            })();
+        </script>
         // other cool scripts & stylesheet references
     </body>
   </html>
   ```
+## Configurations
+
+Settings must be customized before calling `safeDefer.deferAll();` if you want to override the default configuration.
+```html
+<script>
+    (function() {
+        safeDefer.debugMode = true;
+        safeDefer.imagePlaceholder = "placeholder.jpg";
+        safeDefer.srcDeferAttribute = "data-defer-my-src";
+        safeDefer.styleDeferAttribute = "data-defer-my-style";
+        safeDefer.classDeferAttribute = "data-defer-this-class";
+        safeDefer.deferAll();
+    })();
+</script>
+  ```
+`debugMode` (boolean) - enables trace logs in console, defaults to `false`
+
+`imagePlaceholder` (string) - placeholder used during image swaps, it can be an image path or base64, dafaults to `data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=`
+
+`srcDeferAttribute` (string) - HTML attribute flag used for deferring sources, defaults to `data-safe-defer-src`
+
+`styleDeferAttribute` (string) - HTML attribute flag used for deferring styles, defaults to `data-safe-defer-style`
+
+`classDeferAttribute` (string) - HTML attribute flag used for deferring classes, defaults to `data-safe-defer-class`
+
+It's also possible to customize your deferring process via these functions:
+`deferSources`, `deferClasses`, `deferStyles` instead of calling `deferAll`.
+
+
+## Capabilities
+
 ### Defer a `src`
 Add the `data-safe-defer-src` attribute to an `img` element to defer the source.
 ```html

@@ -133,9 +133,15 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- REMOVE THIS SCRIPT TO DISABLE DEFERRED IMAGES -->
+    <!-- SAFE DEFER SCRIPTS -->
     <script type="text/javascript" src="../src/safe-defer.js"></script>
-
+    <script>
+        (function() {
+            safeDefer.debugMode = true;
+            safeDefer.deferAll();
+        })();
+    </script>
+    <!-- SAFE DEFER SCRIPTS -->
     <script type="text/javascript">
       (function() {
         var element = document.getElementById("dom-time");
