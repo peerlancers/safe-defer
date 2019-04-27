@@ -127,16 +127,6 @@ WARNING: This will defer everything inside the `style` attribute of the element.
 --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
 
-## Donating
-
-If this repo has helped you and you're feeling generous, please show your support via
-
-[PayPal](https://www.paypal.me/philipbadilla)
-
-**BTC** - `1CDBQodi5FkvDevi4M7UtkXxtzfseCUJqW`
-
-**LTC** - `Lf5o6FCKzuiqAtkz7tTqr2b6NKA4hUgYS5`
-
 ## License
 [MIT](https://github.com/philip-badilla/safe-defer/blob/master/LICENSE)
 
